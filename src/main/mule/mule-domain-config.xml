@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain:mule-domain
+        xmlns:db="http://www.mulesoft.org/schema/mule/db"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http"
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:domain="http://www.mulesoft.org/schema/mule/ee/domain"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+               http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+               http://www.mulesoft.org/schema/mule/ee/domain http://www.mulesoft.org/schema/mule/ee/domain/current/mule-domain-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<http:listener-config name="domain_HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7a7c7b70-9923-4888-a873-48d54c893dd3" >
+		<http:listener-connection host="0.0.0.0" port="${httpconn.port}" />
+	</http:listener-config>
+	<db:config name="domain_Database_Config" doc:name="Database Config" doc:id="e0404dae-17a0-4cb9-9820-fc85ea45ede4" >
+		<db:mssql-connection host="${bikestoredb.host}" port="${bikestoredb.port}" user="${bikestoredb.user}" password="${bikestoredb.password}" databaseName="${bikestoredb.dbName}" />
+	</db:config>
+	<configuration-properties doc:name="Configuration properties" doc:id="c4831cda-2bcd-43c8-bb00-5c702b52819a" file="muledb properties\dev.yaml" />
+
+
+    <!-- configure here resource to be shared within the domain -->
+
+</domain:mule-domain>
